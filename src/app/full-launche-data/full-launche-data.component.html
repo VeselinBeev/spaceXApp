@@ -1,3 +1,45 @@
-<p>
-    full-launche-data works!
-</p>
+<!-- <div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <button class="btn btn-outline-secondary" type="button">
+            Button
+        </button>
+    </div>
+    <input type="text" class="form-control" placeholder="" />
+</div> -->
+<div class="container-fluid">
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <div class="d-block">
+            <h1 class="display-4 text-white"> Space X Rockets</h1>
+            <p class="lead text-white">Find out more about our space program</p>
+        </div>
+    </div>
+    <!-- end title -->
+    <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-6 " *ngFor="let laun of launchList">
+            <div class="card m-4 ">
+                <a class="app-thumb">
+                    <div class="thumb" [style.backgroundImage]="'url(' + laun.links.mission_patch + ')'" style="height:10rem;"></div>
+                </a>
+                <!-- <span>{{laun.links.mission_patch}}</span> -->
+                <div class="card-body">
+                    <h5 class="card-title"> Mission Name: <b>{{ laun.mission_name }}</b></h5>
+                    <span class="card-text d-block mb-2"> Flight Number <b>{{ laun.flight_number }}</b></span>
+                    <span class="card-text d-block mb-2"> Rocket Name: <b>{{ laun.rocket.rocket_name }}</b></span>
+                    <span class="card-text d-block mb-2"> Rocket Type: <b>{{ laun.rocket.rocket_type }}</b></span>
+                    <span class="card-text d-block mb-2"> Mission success: <b>{{ laun.launch_success }}</b></span>
+                    <span class="card-text d-block mb-2"> Year of launching rocket: <b>{{ laun.launch_year }}</b></span>
+                    <span class="card-text d-block"> Launch side name <b>{{ laun.launch_site.site_name_long }}</b></span>
+                    <span class="card-text">Launch Date and time <b>{{ laun.launch_date_utc }}</b></span>
+                    <p class="card-text mh-cus"> {{ laun.details }} </p>
+                </div>
+                <div class="card-body bg-warning text-white">
+                    <a href="#" class="card-link " href="{{laun.links.article_link}}" target="_blank"> Article Link </a>
+                    <a href="#" class="card-link " href="{{laun.links.wikipedia}}" target="_blank"> Wikipedia Link </a>
+                    <a href="#" class="card-link " href="{{laun.links.video_link}}" target="_blank"> Video Link </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end card container -->
+</div>

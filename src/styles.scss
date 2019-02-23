@@ -19,8 +19,7 @@ body {
 .app-thumb {
     .thumb {
         background-repeat: no-repeat;
-        background-size: contain;
-        height: 10rem;
+        background-size: contain; // height: 10rem;
         margin: 2rem;
         background-position: center;
     }
