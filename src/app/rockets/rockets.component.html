@@ -1,11 +1,11 @@
-<!-- <div class="input-group mb-3">
+<div class="input-group mb-3">
     <div class="input-group-prepend">
-        <button class="btn btn-outline-secondary" type="button">
-            Button
+        <button class="btn btn-warning" type="button">
+            Search by Mission Name
         </button>
     </div>
-    <input type="text" class="form-control" placeholder="" />
-</div> -->
+    <input type="text" class="form-control" [(ngModel)]="launchListMissionFilter.mission_name" placeholder="mission name" />
+</div>
 <div class="container-fluid">
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -16,7 +16,7 @@
     </div>
     <!-- end title -->
     <div class="row">
-        <div class="col-xl-3 col-lg-4 col-md-6 " *ngFor="let laun of launchList">
+        <div class="col-xl-3 col-lg-4 col-md-6 " *ngFor="let laun of launchList | filterBy: launchListMissionFilter ">
             <div class="card m-4 ">
                 <a class="app-thumb">
                     <div class="thumb" [style.backgroundImage]="'url(' + laun.links.mission_patch + ')'" style="height:10rem;"></div>
@@ -26,10 +26,11 @@
                     <span class="card-text d-block mb-2"> Flight Number <b>{{ laun.flight_number }}</b></span>
                     <span class="card-text d-block mb-2"> Rocket Name: <b>{{ laun.rocket.rocket_name }}</b></span>
                     <span class="card-text d-block mb-2"> Rocket Type: <b>{{ laun.rocket.rocket_type }}</b></span>
-                    <!-- <span class="card-text d-block mb-2"> Mission success: <b>{{ laun.launch_success }}</b></span> -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- end card container -->
-</div>
+    <div>
+
+        <!-- end card container -->
+    </div>

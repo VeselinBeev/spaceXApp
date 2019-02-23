@@ -8,7 +8,7 @@ import { ApiService } from "../api/api.service";
 })
 export class FullLauncheDataComponent implements OnInit {
     launchList: any[];
-    launchListFilter: any = { name: null };
+    launchListMissionFilter: any = { mission_name: "" };
     constructor(private __apiServce: ApiService) {}
 
     ngOnInit() {
