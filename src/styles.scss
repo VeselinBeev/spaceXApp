@@ -1,1 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    position: relative;
+    &:before {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: .9;
+        background: url('./assets/images/bg-1.jpg');
+        background-size: contain;
+        content: '';
+        z-index: -1;
+    }
+}
+
+.app-thumb {
+    .thumb {
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 10rem;
+        margin: 2rem;
+        background-position: center;
+    }
+}
+
+.bg-warning {
+    background: #079bff !important;
+}
+
+.card {
+    -webkit-transition: 0.3s ease all;
+    transition: 0.3s ease all;
+    border: 0;
+    .card-body {
+        color: #2c2c2c;
+        .card-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            line-height: 30px;
+            font-weight: 400;
+        }
+        .card-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 30px;
+            font-weight: 400;
+        }
+        .card-link {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 30px;
+            font-weight: 400;
+            text-decoration: none;
+            color: #ffffff;
+            -webkit-transition: 0.3s ease all;
+            transition: 0.3s ease all;
+            &:hover,
+            &:focus {
+                color: #2b2b2b;
+            }
+        }
+    }
+    .mh-cus {
+        height: 60px;
+        overflow-y: hidden;
+        -webkit-transition: 0.3s ease all;
+        transition: 0.3s ease all;
+    }
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        -webkit-box-shadow: 15px 11px 42px -12px rgba(115, 178, 220, 0.86);
+        box-shadow: 15px 11px 42px -12px rgba(115, 178, 220, 0.86);
+        .mh-cus {
+            height: 150px;
+            overflow-y: hidden;
+            min-height: 100% !important;
+        }
+    }
+}

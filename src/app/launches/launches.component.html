@@ -1,17 +1,44 @@
-<div class="input-group mb-3">
+<!-- <div class="input-group mb-3">
     <div class="input-group-prepend">
         <button class="btn btn-outline-secondary" type="button">
             Button
         </button>
     </div>
     <input type="text" class="form-control" placeholder="" />
+</div> -->
+<div class="container-fluid">
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <div class="d-block">
+            <h1 class="display-4 text-white"> Space X launches information</h1>
+            <p class="lead text-white">Find out more about our space program</p>
+        </div>
+    </div>
+    <!-- end title -->
+    <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-6 " *ngFor="let laun of launchList">
+            <div class="card m-4 ">
+                <a class="app-thumb">
+                    <div class="thumb" [style.backgroundImage]="'url(' + laun.links.mission_patch + ')'"></div>
+                </a>
+                <!-- <span>{{laun.links.mission_patch}}</span> -->
+                <div class="card-body">
+                    <h5 class="card-title"> Mission Name: <b>{{ laun.mission_name }}</b></h5>
+                    <span class="card-text d-block mb-2"> Year of launching rocket: <b>{{ laun.launch_year }}</b></span>
+                    <span class="card-text d-block mb-2"> Mission success: <b>{{ laun.launch_success }}</b></span>
+                    <span class="card-text d-block mb-2"> Flight Number <b>{{ laun.flight_number }}</b></span>
+                    <span class="card-text d-block"> Launch side name <b>{{ laun.launch_site.site_name_long }}</b></span>
+                    <p class="card-text mh-cus"> {{ laun.details }} </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"></li>
+                </ul>
+                <div class="card-body bg-warning text-white">
+                    <a href="#" class="card-link " href="{{laun.links.article_link}}" target="_blank"> Article Link </a>
+                    <a href="#" class="card-link " href="{{laun.links.wikipedia}}" target="_blank"> Wikipedia Link </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end card container -->
 </div>
-<h2>Launches List</h2>
-
-<ul class="d-block" *ngFor="let laun of launchList">
-    <li>{{ laun.flight_number }}</li>
-    <li>{{ laun.mission_name }}</li>
-    <li>{{ laun.launch_year }}</li>
-    <li>{{ laun.launch_success }}</li>
-</ul>
-

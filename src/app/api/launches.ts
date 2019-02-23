@@ -16,4 +16,9 @@ export interface ILaunches {
     rocket_type: string;
     launch_date_utc: any;
     details: string;
+    article_link: string;
+    launch_window: number;
+    site_id: string;
+    site_name: string;
+    site_name_long: string;
 }

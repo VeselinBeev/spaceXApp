@@ -34,4 +34,5 @@ export class LaunchesComponent implements OnInit {
             .getLaunches()
             .subscribe(data => (this.launchList = data));
     }
+    getUrl() {}
 }
